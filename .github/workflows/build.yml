@@ -1,7 +1,7 @@
 name: build
 on:
   push:
-    branches: [ develop ]
+    branches: [ feature/**, develop ]
 jobs:
   build-lin:
     runs-on: ubuntu-latest
@@ -11,3 +11,6 @@ jobs:
         submodules: recursive
     - name: My second step
       uses: IT-Medved/setup-onec-build-env-action@develop
+      env: 
+        ONEC_USERNAME: ${{ secrets.ONEC_USERNAME }}
+        ONEC_PASSWORD: ${{ secrets.ONEC_PASSWORD }}
