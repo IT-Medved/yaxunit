@@ -21,7 +21,7 @@ jobs:
       uses: IT-Medved/setup-onec-build-env-action@feature/installers
       with:
         type: onec
-        onec_version: 8.3.21.1890     
+        onec_version: 8.3.20.1549
       env: 
         ONEC_USERNAME: ${{ secrets.ONEC_USERNAME }}
         ONEC_PASSWORD: ${{ secrets.ONEC_PASSWORD }}
