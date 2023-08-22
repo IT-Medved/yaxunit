@@ -14,6 +14,9 @@ jobs:
       with:
         type: edt
         edt_version: 2022.2.5
+      env: 
+        ONEC_USERNAME: ${{ secrets.ONEC_USERNAME }}
+        ONEC_PASSWORD: ${{ secrets.ONEC_PASSWORD }}
     - name: install Onec Platform
       uses: IT-Medved/setup-onec-build-env-action@feature/installers
       with:
