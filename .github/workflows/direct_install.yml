@@ -3,28 +3,28 @@ on:
   push:
     branches: [ feature/**, develop ]
 jobs:
-  build-feature:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
-      with:
-        submodules: recursive
-    - name: install EDT
-      uses: IT-Medved/setup-onec-build-env-action@feature/installers
-      with:
-        type: edt
-        edt_version: 2022.2.5
-      env: 
-        ONEC_USERNAME: ${{ secrets.ONEC_USERNAME }}
-        ONEC_PASSWORD: ${{ secrets.ONEC_PASSWORD }}
-    - name: install Onec Platform
-      uses: IT-Medved/setup-onec-build-env-action@feature/installers
-      with:
-        type: onec
-        onec_version: 8.3.20.1549
-      env: 
-        ONEC_USERNAME: ${{ secrets.ONEC_USERNAME }}
-        ONEC_PASSWORD: ${{ secrets.ONEC_PASSWORD }}
+  # build-feature:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v3
+  #     with:
+  #       submodules: recursive
+  #   - name: install EDT
+  #     uses: IT-Medved/setup-onec-build-env-action@feature/installers
+  #     with:
+  #       type: edt
+  #       edt_version: 2022.2.5
+  #     env: 
+  #       ONEC_USERNAME: ${{ secrets.ONEC_USERNAME }}
+  #       ONEC_PASSWORD: ${{ secrets.ONEC_PASSWORD }}
+  #   - name: install Onec Platform
+  #     uses: IT-Medved/setup-onec-build-env-action@feature/installers
+  #     with:
+  #       type: onec
+  #       onec_version: 8.3.20.1549
+  #     env: 
+  #       ONEC_USERNAME: ${{ secrets.ONEC_USERNAME }}
+  #       ONEC_PASSWORD: ${{ secrets.ONEC_PASSWORD }}
   build-dev:
     runs-on: ubuntu-latest
     steps:
@@ -47,3 +47,5 @@ jobs:
       env: 
         ONEC_USERNAME: ${{ secrets.ONEC_USERNAME }}
         ONEC_PASSWORD: ${{ secrets.ONEC_PASSWORD }}
+    - name: Not on Monday or Wednesday
+      run: ring
