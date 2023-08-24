@@ -35,7 +35,7 @@ jobs:
       uses: IT-Medved/setup-onec-build-env-action@develop
       with:
         type: edt
-        edt_version: 2022.2.5
+        edt_version: 2023.1.2
       env: 
         ONEC_USERNAME: ${{ secrets.ONEC_USERNAME }}
         ONEC_PASSWORD: ${{ secrets.ONEC_PASSWORD }}
