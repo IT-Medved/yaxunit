@@ -32,7 +32,7 @@ jobs:
       with:
         submodules: recursive
     - name: install EDT
-      uses: IT-Medved/setup-onec-build-env-action@develop
+      uses: IT-Medved/onec-setup-build-env-action@develop
       with:
         type: edt
         edt_version: 2023.1.2
@@ -40,7 +40,7 @@ jobs:
         ONEC_USERNAME: ${{ secrets.ONEC_USERNAME }}
         ONEC_PASSWORD: ${{ secrets.ONEC_PASSWORD }}
     - name: install Onec Platform
-      uses: IT-Medved/setup-onec-build-env-action@develop
+      uses: IT-Medved/onec-setup-build-env-action@develop
       with:
         type: onec
         onec_version: 8.3.20.1549
